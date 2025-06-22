@@ -1,4 +1,8 @@
-- Creation de la db
-- Connexion a la db
-- Mise en place des routes
+- Creation de la db done
+- Connexion a la db done 
+- Mise en place des routes done
 - Implementation des vues
+    - Comprehension des middleware
+    - Creation et auth des users
+    - Autorisation via jwt
+
