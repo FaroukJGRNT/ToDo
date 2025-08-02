@@ -4,6 +4,11 @@ function jwtAuth(req, res, next) {
     console.log("middleware fired")
 
     const authHeader = req.headers["authorization"]
+
+    if (authHeader == undefined) {
+        res.status(401).json({ error: 'Unauthorized' })
+    }
+
     const token = authHeader.split(" ")[1]
 
     if (!token) {
