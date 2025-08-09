@@ -57,6 +57,7 @@ router.post("/login/", async (req, res) => {
             } else {
                 // Check the user with this email exists
                 if (results.length != 1) {
+                    console.log("Many users with this email")
                     res.status(401).json({ error: 'Invalid credentials' })
                     res.end()
                 }
@@ -69,6 +70,7 @@ router.post("/login/", async (req, res) => {
                     res.status(200).json({ token })
                     
                 } else {
+                    console.log('Invalid credentials')
                     res.status(401).json({ error: 'Invalid credentials' })
                 }
             }
