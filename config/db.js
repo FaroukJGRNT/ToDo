@@ -2,8 +2,13 @@
 const mysql = require('mysql2');
 require("dotenv").config()
 
-// Create the connection to database
-const connexion = mysql.createConnection(process.env.DATABASE_URL);
+const connexion = await mysql.createConnection({
+    host: process.env["HOST"],
+    port: process.env["PORT"],
+    user: process.env["USERNAME"],
+    password: process.env["PASSWORD"],
+    database: process.env["DB_NAME"],
+});
 
 //Create the schemes
 connexion.query(`CREATE TABLE IF NOT EXISTS user (
