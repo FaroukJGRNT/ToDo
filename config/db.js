@@ -1,13 +1,13 @@
 // Get the client
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 require("dotenv").config()
 
-const connexion = await mysql.createConnection({
-    host: process.env["HOST"],
-    port: process.env["PORT"],
-    user: process.env["USERNAME"],
-    password: process.env["PASSWORD"],
-    database: process.env["DB_NAME"],
+const connexion = mysql.createPool({
+    host: process.env.HOST,
+    port: process.env.PORT,
+    user: process.env.USERNAME,
+    password: process.env.PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 //Create the schemes
